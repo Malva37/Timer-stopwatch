@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="top">
+    <div class="currentDate"></div>
+    <div class="currentTime">
+        <div class="hhCurrent time"></div><span>:</span>
+        <div class="mmCurrent time"></div><span>:</span>
+        <div class="ssCurrent time"></div>
+    </div>
+</section>
+<section class="center flex">
+    <div class="timerCenter">
+        <div class="numbersTimerCenter flex">
+            <div class="hhCenter time">00 </div> <span>:</span>
+            <div class="mmCenter time">00 </div> <span>:</span>
+            <div class="ssCenter time">00 </div>
+            <!-- <span class="mssCenter">000</span> -->
+        </div>
+        <div class="buttonsCenter">
+            <button class="startTimerCenter">Start</button>
+            <button class="loopTimerCenter">Loop</button>
+            <button class="stopTimerCenter">Stop</button>
+            <button class="resetTimerCenter">Reset</button>
+        </div>
+ 
+    </div>
+<div class="resultCenter"></div>
+</section>
+
+<section class="bottom flex">
+<div class="specifiedTimerBottom">
+    <div class="setNumbersTimerBottom">1</div>
+    <div class="setTextTimerBottom">minutes</div>
+    <div class="setButtonsBottom flex">
+        <button class="plusMinute">+</button>
+        <button class="minusMinute">-</button>
+    </div>
+</div>
+<div class="resultTimerBottom">
+    <div class="resultNumbersTimerBottom flex">
+        <div class="mmBottom time">00 </div> <span>:</span>
+        <div class="ssBottom time">00 </div>
+    </div>
+    <div class="resultTuttonsBottom flex">
+        <button class="startTimerBottom">Start</button>
+        <button class="stopTimerBottom">Stop</button>
+        <button class="resetTimerBottom">Reset</button>
+        </div>
+</div>
+</section>
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>
