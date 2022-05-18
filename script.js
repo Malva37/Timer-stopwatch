@@ -31,8 +31,8 @@ let mmCenterValue = 0;
 let hhCenterValue = 0;
 
 let mmSetBottomValue = 1;
-let mmBottomValue = mmSetBottomValue;
 let ssBottomValue = -1;
+let mmBottomValue;
 
 let idStartCenterTimer;
 let idStartBottomTimer;
@@ -110,23 +110,25 @@ loopTimerCenter.onclick = () => {
 }
 
 plusMinute.onclick = () => {
-    mmBottomValue++;
-    setNumbersTimerBottom.textContent = mmBottomValue;
+ mmSetBottomValue++;
+
+    // mmBottomValue++;
+    setNumbersTimerBottom.textContent = mmSetBottomValue;
 }
 minusMinute.onclick = () => {
-    console.log(mmBottomValue);
 
-    if (mmBottomValue > 0) {
-        mmBottomValue--;
-        setNumbersTimerBottom.textContent = mmBottomValue;
+    if (mmSetBottomValue > 0) {
+        mmSetBottomValue--;
+        setNumbersTimerBottom.textContent = mmSetBottomValue;
     }
-    console.log(mmBottomValue);
+    console.log(mmSetBottomValue);
 
 
 }
 
 
 startTimerBottom.onclick = () => {
+     mmBottomValue = mmSetBottomValue;
 
     if (mmBottomValue < 10) {
         mmBottom.textContent = '0' + mmBottomValue;
