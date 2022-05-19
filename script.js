@@ -11,9 +11,8 @@ const mmCurrent = getSel('.mmCurrent');
 const ssCurrent = getSel('.ssCurrent');
 const hhCenter = getSel('.hhCenter');
 const mmCenter = getSel('.mmCenter');
-const ssCenter = getSel('.ssCenter');
+const ssCenter = getSel('.ssCenter');ol
 const resultCenter = getSel('.resultCenter');
-
 
 const startTimerBottom = getSel('.startTimerBottom');
 const stopTimerBottom = getSel('.stopTimerBottom');
@@ -29,11 +28,10 @@ const setNumbersTimerBottom = getSel('.setNumbersTimerBottom');
 let ssCenterValue = 0;
 let mmCenterValue = 0;
 let hhCenterValue = 0;
-
 let mmSetBottomValue = 1;
 let ssBottomValue = -1;
 let mmBottomValue;
-
+let isInitStart = true;
 let idStartCenterTimer;
 let idStartBottomTimer;
 
@@ -110,25 +108,23 @@ loopTimerCenter.onclick = () => {
 }
 
 plusMinute.onclick = () => {
- mmSetBottomValue++;
-
-    // mmBottomValue++;
+    mmSetBottomValue++;
     setNumbersTimerBottom.textContent = mmSetBottomValue;
 }
 minusMinute.onclick = () => {
-
     if (mmSetBottomValue > 0) {
         mmSetBottomValue--;
         setNumbersTimerBottom.textContent = mmSetBottomValue;
     }
-    console.log(mmSetBottomValue);
-
-
 }
 
 
 startTimerBottom.onclick = () => {
-     mmBottomValue = mmSetBottomValue;
+
+    if (isInitStart) {
+        mmBottomValue = mmSetBottomValue; 
+        isInitStart = false;
+    }
 
     if (mmBottomValue < 10) {
         mmBottom.textContent = '0' + mmBottomValue;
@@ -171,11 +167,11 @@ startTimerBottom.onclick = () => {
 stopTimerBottom.onclick = () => {
     clearInterval(idStartBottomTimer);
 }
+
 resetTimerBottom.onclick = () => {
     ssBottom.textContent = '00';
-    ssBottomValue = 0;
+    ssBottomValue = -1;
     mmBottom.textContent = '00';
-    mmBottomValue = mmSetBottomValue;
+    isInitStart = true;
     clearInterval(idStartBottomTimer);
-    console.log(mmBottomValue);
 }
